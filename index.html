@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Time Since You Lost The Game</title>
+        <body style="font-family:  -apple-system, BlinkMacSystemFont, sans-serif;">
+            <meta name="viewport" content="width=device-width, initial scale=1">
+            <meta name="description" content="See how long it's been since you lost the game." >
+    </head>
+    <style>
+        html {
+            background-color: #000000;
+            
+        }
+        div {
+        }
+        a:link {
+            color: white;
+        }
+        a {
+            color:white;
+        }
+        #seconds {
+            font-size: 5em;
+            color:white;
+            text-align: center;
+        }
+        #minutes {
+            font-size: 5em;
+            color:white;
+            text-align: center;
+        }
+        #colon {
+            font-size: 5em;
+            color:white;
+            text-align: center;
+        }
+        .timer {
+            display:block;
+            text-align: center;
+        }
+    </style>
+    <body>
+       <h1 style="color: white"><center>You just lost the game.</center></h1>
+       <br>
+      <br>
+      <h2 style="color: white"><center>TIME SINCE YOU LOST THE GAME:</center></h2>
+      <div class="timer">
+      <label id="minutes">00</label>
+      <label id="colon">:</label>
+      <label id="seconds">00</label>
+    </div>
+        <script type="text/javascript">
+            var minutesLabel = document.getElementById("minutes");
+            var secondsLabel = document.getElementById("seconds");
+            var totalSeconds = 0;
+            setInterval(setTime, 1000);
+
+            function setTime()
+            {
+                ++totalSeconds;
+                secondsLabel.innerHTML = pad(totalSeconds%60);
+                minutesLabel.innerHTML = pad(parseInt(totalSeconds/60));
+            }
+
+            function pad(val)
+            {
+                var valString = val + "";
+                if(valString.length < 2)
+                {
+                    return "0" + valString;
+                }
+                else
+                {
+                    return valString;
+                }
+            }
+        </script>
+      <br>
+      <br>
+       <h3 style="color:white"><center><a href="https://youtu.be/q-Y0bnx6Ndw?si=DG7BMYn90S7y7SpD">Ok fine, but this link is safe.</a></center></h3>
+       <br>
+     
+    </body>
+</html>
